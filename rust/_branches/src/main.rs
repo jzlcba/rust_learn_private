@@ -14,4 +14,13 @@ fn main() {
 
     let num = if true {1} else {0};
     println!("the value of num is {:?}", num);
+
+    let mut x:u32 = 1;
+    let x = loop {
+        x += 1;
+        if x == 30 {
+            break x;
+        }
+    };
+    println!("the value of x is {}", x);
 }
