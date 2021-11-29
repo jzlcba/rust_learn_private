@@ -18,25 +18,47 @@
 //     println!("the x is {}", x);
 // }
 
-fn main() {
-    let s1 = gives_ownership();//函数内创建一个字符串，并将所有权传出
-    println!("the string s1 is {}", s1);
+// fn main() {
+//     let s1 = gives_ownership();//函数内创建一个字符串，并将所有权传出
+//     println!("the string s1 is {}", s1);
 
-    let s2 = String::from("other string on heap!");
+//     let s2 = String::from("other string on heap!");
 
-    println!("the string s2 is {}", s2);
+//     println!("the string s2 is {}", s2);
 
-    let s3 = gives_and_back_ownership(s2);//函数外部创建的字符串，移动到函数内部，操作完成后将所有权交回
+//     let s3 = gives_and_back_ownership(s2);//函数外部创建的字符串，移动到函数内部，操作完成后将所有权交回
     
-    //println!("the string s2 is {}", s2);//由于所有权已经移动到了s3，s2无效
-    println!("the string s3 is {}", s3);//s3是有效的
+//     //println!("the string s2 is {}", s2);//由于所有权已经移动到了s3，s2无效
+//     println!("the string s3 is {}", s3);//s3是有效的
+// }
+
+// fn gives_ownership()->String{
+//     let s = String::from("a string on heap!");
+//     s
+// }
+
+// fn gives_and_back_ownership(s: String)->String{
+//     s
+// }
+
+// fn main() {
+//     let mut s1 = String::from("a string on heap!");
+//     let s1_len = make_ref(&mut s1);//可变引用必须指明，告诉读者函数内部要改这个变量
+//     println!("the  s1 is: {}", s1);
+//     println!("the len of s1 is: {}", s1_len);
+// }
+
+// fn make_ref(s:&mut String)->usize {
+//     s.push_str("xxxx");
+//     s.len()
+// }
+
+
+fn main() {
+    let s = make_haning();
 }
 
-fn gives_ownership()->String{
-    let s = String::from("a string on heap!");
-    s
-}
-
-fn gives_and_back_ownership(s: String)->String{
-    s
+fn make_haning() -> &String {
+    let s = String::from("aaaa");
+    &s
 }
