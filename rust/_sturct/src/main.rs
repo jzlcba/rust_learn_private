@@ -39,4 +39,12 @@ fn main() {
         ..st1
     };
     println!("Name {}, Addr {}, Age {}", st1.name, st1.addr, st1.age);
+
+    struct Color(u8,u8,u8);
+    struct Point(u8,u8);
+
+    let c1 = Color(0,0,0);
+    let p1 = Point(1,1);
+
+    struct Student;
 }
